@@ -17,7 +17,7 @@ const SignUp = () => {
     } else {
       const afunc = async () => {
         const user = await axios
-          .post("http://localhost:4000/signUp", data)
+          .post(`http://localhost:${process.env.PORT || 4000}/signUp`, data)
           .then((response) => response.data);
 
         if (user.error) {

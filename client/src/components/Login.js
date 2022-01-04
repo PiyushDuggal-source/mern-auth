@@ -10,16 +10,18 @@ const Login = () => {
   const navigate = useNavigate();
 
   const onSubmit = async (data) => {
-    await axios.post("http://localhost:4000/login", data).then((response) => {
-      const retrievedData = response.data;
+    await axios
+      .post(`http://localhost:${process.env.PORT || 4000}/login`, data)
+      .then((response) => {
+        const retrievedData = response.data;
 
-      if (retrievedData.status !== "ok") {
-        setError("invalid Email or Password");
-      } else if (retrievedData.user) {
-        localStorage.setItem("token", retrievedData.user);
-        navigate(`/dashboard/${retrievedData.userId}`);
-      }
-    });
+        if (retrievedData.status !== "ok") {
+          setError("invalid Email or Password");
+        } else if (retrievedData.user) {
+          localStorage.setItem("token", retrievedData.user);
+          navigate(`/dashboard/${retrievedData.userId}`);
+        }
+      });
   };
   return (
     <Card>

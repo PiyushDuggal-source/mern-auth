@@ -19,9 +19,11 @@ const HomePage = () => {
 
   useEffect(() => {
     const getInfo = async () => {
-      await axios.get("http://localhost:4000/getUserInfos").then((response) => {
-        setInfo(response.data);
-      });
+      await axios
+        .get(`http://localhost:${process.env.PORT || 4000}/getUserInfos`)
+        .then((response) => {
+          setInfo(response.data);
+        });
     };
     getInfo();
   }, []);

@@ -23,7 +23,7 @@ const DashboardInfo = () => {
     } else {
       const userArr = [];
       axios
-        .get("http://localhost:4000/single", {
+        .get(`http://localhost:${process.env.PORT || 4000}/single`, {
           headers: { "x-access-token": token },
         })
         .then((response) => {

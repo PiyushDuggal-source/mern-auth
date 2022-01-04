@@ -20,7 +20,7 @@ const Dashboard = () => {
   const deleteAccount = async () => {
     localStorage.removeItem("token");
     await axios
-      .delete(`http://localhost:4000/delete/${id}`)
+      .delete(`http://localhost:${process.env.PORT || 4000}/delete/${id}`)
       .then((response) => {
         alert(`${response.data.message}`);
       });
@@ -35,7 +35,7 @@ const Dashboard = () => {
     } else {
       const getData = async () => {
         await axios
-          .get(`http://localhost:4000/single`, {
+          .get(`http://localhost:${process.env.PORT || 4000}/single`, {
             headers: { "x-access-token": token },
           })
           .then((result) => {
@@ -52,7 +52,10 @@ const Dashboard = () => {
   }, []);
   const saveData = async (data) => {
     console.log(data);
-    await axios.patch(`http://localhost:4000/addDetails/${id}`, data);
+    await axios.patch(
+      `http://localhost:${process.env.PORT || 4000}/addDetails/${id}`,
+      data
+    );
   };
 
   const logOut = () => {

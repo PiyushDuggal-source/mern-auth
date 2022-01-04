@@ -13,7 +13,7 @@ app.use("/", routes);
 if (process.env.NODE_ENV == "production") {
   app.use(express.static("client/build"));
 }
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 4000;
 
 mongoose.connect(process.env.DB_URL).then((res) => {
   app.listen(port, () => {
