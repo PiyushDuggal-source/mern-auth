@@ -11,7 +11,7 @@ const Login = () => {
 
   const onSubmit = async (data) => {
     await axios
-      .post(`http://localhost:${process.env.PORT || 4000}/login`, data)
+      .post(`http://localhost:${process.env.PORT}/login`, data)
       .then((response) => {
         const retrievedData = response.data;
 
