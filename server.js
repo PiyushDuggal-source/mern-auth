@@ -19,8 +19,12 @@ if (process.env.NODE_ENV == "production") {
 }
 const port = process.env.PORT || 4000;
 
-mongoose.connect(process.env.DB_URL).then((res) => {
-  app.listen(port, () => {
-    console.log(`Server is listening on port ${port}`);
+mongoose
+  .connect(
+    "mongodb+srv://piyush:duggal@mernauth.hxg8r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+  )
+  .then((res) => {
+    app.listen(port, () => {
+      console.log(`Server is listening on port ${port}`);
+    });
   });
-});
