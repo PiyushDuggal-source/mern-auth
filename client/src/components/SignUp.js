@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+require("dotenv").config();
 import { Button, Form, Card, Alert } from "react-bootstrap";
 
 const SignUp = () => {

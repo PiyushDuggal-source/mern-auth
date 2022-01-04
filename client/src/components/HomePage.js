@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import axios from "axios";
 import { Card } from "react-bootstrap";
+require("dotenv").config();
 
 const HomePage = () => {
   const [infos, setInfo] = useState();

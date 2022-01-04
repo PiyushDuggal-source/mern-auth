@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+require("dotenv").config();
 import { Button, Alert, Form, Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 

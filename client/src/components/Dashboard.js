@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import Error from "./Error";
 import Success from "./Success";
 import { Button, Form, Card } from "react-bootstrap";
+require("dotenv").config();
 
 const Dashboard = () => {
   const { register, handleSubmit } = useForm();
