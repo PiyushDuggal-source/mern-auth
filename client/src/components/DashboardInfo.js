@@ -22,7 +22,7 @@ const DashboardInfo = () => {
     } else {
       const userArr = [];
       axios
-        .get(`http://localhost:${process.env.PORT}/single`, {
+        .get(`https://mern-auth-crud.herokuapp.com/single`, {
           headers: { "x-access-token": token },
         })
         .then((response) => {
