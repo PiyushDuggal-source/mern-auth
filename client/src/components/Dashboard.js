@@ -20,7 +20,7 @@ const Dashboard = () => {
   const deleteAccount = async () => {
     localStorage.removeItem("token");
     await axios
-      .delete(`http://localhost:${process.env.PORT}/delete/${id}`)
+      .delete(`https://mern-auth-crud.herokuapp.com/delete/${id}`)
       .then((response) => {
         alert(`${response.data.message}`);
       });
@@ -35,7 +35,7 @@ const Dashboard = () => {
     } else {
       const getData = async () => {
         await axios
-          .get(`http://localhost:${process.env.PORT}/single`, {
+          .get(`https://mern-auth-crud.herokuapp.com/single`, {
             headers: { "x-access-token": token },
           })
           .then((result) => {
@@ -53,7 +53,7 @@ const Dashboard = () => {
   const saveData = async (data) => {
     console.log(data);
     await axios.patch(
-      `http://localhost:${process.env.PORT}/addDetails/${id}`,
+      `https://mern-auth-crud.herokuapp.com/addDetails/${id}`,
       data
     );
   };

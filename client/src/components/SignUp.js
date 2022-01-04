@@ -16,7 +16,7 @@ const SignUp = () => {
     } else {
       const afunc = async () => {
         const user = await axios
-          .post(`http://localhost:${process.env.PORT}/signUp`, data)
+          .post(`https://mern-auth-crud.herokuapp.com/signUp`, data)
           .then((response) => response.data);
 
         if (user.error) {

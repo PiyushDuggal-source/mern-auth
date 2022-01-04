@@ -20,7 +20,7 @@ const HomePage = () => {
   useEffect(() => {
     const getInfo = async () => {
       await axios
-        .get(`http://localhost:${process.env.PORT}/getUserInfos`)
+        .get(`https://mern-auth-crud.herokuapp.com/getUserInfos`)
         .then((response) => {
           setInfo(response.data);
         });
