@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-require("dotenv").config();
 
 import { useNavigate } from "react-router-dom";
 import Error from "./Error";
